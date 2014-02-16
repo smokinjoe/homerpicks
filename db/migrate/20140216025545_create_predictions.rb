@@ -7,7 +7,7 @@ class CreatePredictions < ActiveRecord::Migration
       t.integer :wins
       t.integer :losses
       t.string :tiebreaker, { :null => true }
-      t.boolean :confirmed, { :null => false }
+      t.boolean :confirmed, { :null => false, :default => false }
       
       t.timestamps
     end

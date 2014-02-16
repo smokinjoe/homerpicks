@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140216001823) do
+ActiveRecord::Schema.define(version: 20140216025545) do
+
+  create_table "predictions", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "wins"
+    t.integer  "losses"
+    t.string   "tiebreaker"
+    t.boolean  "confirmed",  default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "predictions", ["user_id"], name: "index_predictions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
