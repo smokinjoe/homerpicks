@@ -1,4 +1,4 @@
-<%= simple_form_for(@prediction) do |f| %>
+<%= simple_form_for(@prediction, html: { class: "form-horizontal" }) do |f| %>
   <% if @prediction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@prediction.errors.count, "error") %> prohibited this prediction from being saved:</h2>
@@ -13,7 +13,7 @@
   <% end %>
 
   <%#= f.input :id, :as => :hidden %>
-  <%= f.input :name, :type => :text, label: "Name", required: true %>
+  <%= f.input :team, :type => :text, label: "Team Name", required: true %>
   <%= f.input :wins, label: "Wins", required: true %>
   <%= f.input :losses, label: "Losses", required: true %>
   <%= f.input :tiebreaker, label: "Who hits the most home runs this year?", required: true %>

@@ -72,6 +72,6 @@ class PredictionsController < ApplicationController
     def prediction_params
       logger.error "JOE: #{params[:prediction].inspect}"
       #params[:prediction]
-      params.require(:prediction).permit(:name, :wins, :losses, :tiebreaker)
+      params.require(:prediction).permit(:team, :wins, :losses, :tiebreaker)
     end
 end
