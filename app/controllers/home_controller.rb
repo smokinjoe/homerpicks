@@ -4,5 +4,10 @@ class HomeController < ApplicationController
   protect_from_forgery with: :exception
   
   def index
+    if user_signed_in?
+      redirect_to new_prediction_path
+    else
+      render 'index'
+    end
   end
 end
