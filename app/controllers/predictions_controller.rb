@@ -1,6 +1,7 @@
 class PredictionsController < ApplicationController
   before_action :set_prediction, only: [:show, :edit, :update, :destroy]
-
+  #before_action :authenticate_user!
+  
   # GET /predictions
   # GET /predictions.json
   def index
@@ -69,6 +70,8 @@ class PredictionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prediction_params
-      params[:prediction]
+      logger.error "JOE: #{params[:prediction].inspect}"
+      #params[:prediction]
+      params.require(:prediction).permit(:name, :wins, :losses, :tiebreaker)
     end
 end
