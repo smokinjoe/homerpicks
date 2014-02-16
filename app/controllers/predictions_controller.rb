@@ -26,7 +26,9 @@ class PredictionsController < ApplicationController
   # POST /predictions.json
   def create
     @prediction = Prediction.new(prediction_params)
-
+    #@prediction.user_id = current_user.id
+    @prediction.user = current_user
+    
     respond_to do |format|
       if @prediction.save
         format.html { redirect_to @prediction, notice: 'Prediction was successfully created.' }
