@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   
   def index
     if user_signed_in?
-      redirect_to new_prediction_path
+      redirect_to predictions_path
     else
       render 'index'
     end
