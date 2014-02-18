@@ -72,8 +72,6 @@ class PredictionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prediction_params
-      logger.error "JOE: #{params[:prediction].inspect}"
-      #params[:prediction]
       params.require(:prediction).permit(:team, :wins, :losses, :tiebreaker)
     end
 end
