@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Custom
       t.string :display_name, :null => false, :default => ""
+      t.integer :role, :null => false, :default => 0
 
       t.timestamps
     end
