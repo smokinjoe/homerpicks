@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   def is_admin?
     return self.role.equal?(1)
   end
+  
+  def has_prediction?
+    return !self.prediction.equal?(nil)
+  end
 end

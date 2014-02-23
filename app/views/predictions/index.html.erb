@@ -6,9 +6,14 @@
       <th>ID</th>
       <th>Who's Prediction</th>
       <th>Team Name</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Tiebreaker</th>
+      <% if current_user.is_admin? %>
       <th></th>
       <th></th>
       <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -18,9 +23,14 @@
         <td><%= prediction.id %></td>
         <td><%= prediction.user.display_name %></td>
         <td><%= prediction.team %></td>
+        <td><%= prediction.wins %></td>
+        <td><%= prediction.losses %></td>
+        <td><%= prediction.tiebreaker %></td>
+        <% if current_user.is_admin? %>
         <td><%= link_to 'Show', prediction %></td>
         <td><%= link_to 'Edit', edit_prediction_path(prediction) %></td>
         <td><%= link_to 'Destroy', prediction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +38,8 @@
 
 <br>
 
-<%= link_to 'New Prediction', new_prediction_path %>
+<% if !current_user.has_prediction? %>
+  <%= link_to 'New Prediction', new_prediction_path %>
+<% else %>
+  <%= link_to 'My prediction', current_user.prediction %>
+<% end %>
