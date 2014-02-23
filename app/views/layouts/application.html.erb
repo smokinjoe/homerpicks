@@ -12,8 +12,9 @@
     <% if !current_user.equal?(nil) %>
     <%= render 'layouts/navbar' %>
     <% end %>
-  <p class="bg-warning"><%= alert %></p>
-  <p class="bg-info"><%= notice %></p>
+  
+  <% if alert %><p class="bg-warning"><%= alert %></p><% end %>
+  <% if notice %><p class="bg-info"><%= notice %></p><% end %>
 <%= yield %>
   </div>
 </body>

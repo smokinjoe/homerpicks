@@ -12,3 +12,8 @@
  *= require_tree .
  *= require bootstrap
  */
+
+.bg-info,
+.bg-warning {
+  padding: 15px;
+}
