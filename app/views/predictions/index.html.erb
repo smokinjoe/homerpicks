@@ -39,7 +39,7 @@
 <br>
 
 <% if !current_user.has_prediction? %>
-  <%= link_to 'New Prediction', new_prediction_path %>
+  <%#= link_to 'New Prediction', new_prediction_path %>
 <% else %>
-  <%= link_to 'My prediction', current_user.prediction %>
+  <%#= link_to 'My prediction', current_user.prediction %>
 <% end %>
