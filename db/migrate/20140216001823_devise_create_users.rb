@@ -33,6 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Custom
       t.string :display_name, :null => false, :default => ""
       t.integer :role, :null => false, :default => 0
+      t.references :prediction, index: true
 
       t.timestamps
     end
@@ -40,6 +41,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     add_index :users, :confirmation_token,   :unique => true
+    add_index :users, :prediction_id
     # add_index :users, :unlock_token,         :unique => true
   end
 end
