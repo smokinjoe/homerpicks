@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h2>Prediction</h2>
+
+<dl>
+  <dt>Team</dt><dd><%= @prediction.team %></dd>
+  <dt>Wins</dt><dd><%= @prediction.wins %></dd>
+  <dt>Losses</dt><dd><%= @prediction.losses %></dd>
+  <dt>Most home runs</dt><dd><%= @prediction.tiebreaker %></dd>
+</dl>
 
 <%= link_to 'Edit', edit_prediction_path(@prediction) %> |
 <%= link_to 'Back', predictions_path %>

@@ -11,6 +11,7 @@ class PredictionsController < ApplicationController
   # GET /predictions/1
   # GET /predictions/1.json
   def show
+    @prediction = Prediction.find(params[:id])
   end
 
   # GET /predictions/new
