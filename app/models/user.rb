@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_one :prediction
 
   def is_admin?
-    return current_user.role
+    return self.role.equal?(1)
   end
 end
