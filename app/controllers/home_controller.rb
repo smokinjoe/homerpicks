@@ -4,10 +4,8 @@ class HomeController < ApplicationController
   protect_from_forgery with: :exception
   
   def index
-    if user_signed_in?
-      redirect_to predictions_path
-    else
-      render 'index'
-    end
+    @signed_in = !current_user.equal?(nil)
+    @predictions = Prediction.all
+    render 'index'
   end
 end

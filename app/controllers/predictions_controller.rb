@@ -5,7 +5,8 @@ class PredictionsController < ApplicationController
   # GET /predictions
   # GET /predictions.json
   def index
-    @predictions = Prediction.all
+    #@predictions = Prediction.all
+    redirect_to root_path
   end
 
   # GET /predictions/1
