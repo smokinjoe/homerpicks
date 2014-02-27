@@ -21,6 +21,7 @@ module Homerpicks
     # config.i18n.default_locale = :de
 
     # as requested by heroku
-    config.assets.initialize_on_precompile = false
+    # commented because it is for rails 3.x
+    #config.assets.initialize_on_precompile = false
   end
 end
