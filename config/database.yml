@@ -25,8 +25,8 @@ production:
 #  host: 127.0.0.1
   adapter: mysql2
   encoding: utf8
-  database: homerpicks_production
+  database: homerpicks_development
   pool: 5
 #  timeout: 5000
-  username: homerpicks
+  username: root
   password:
