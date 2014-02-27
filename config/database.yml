@@ -20,13 +20,3 @@ test:
 #  timeout: 5000
   username: homerpicks
   password:
-
-production:
-#  host: 127.0.0.1
-  adapter: mysql2
-  encoding: utf8
-  database: homerpicks_development
-  pool: 5
-#  timeout: 5000
-  username: root
-  password:
