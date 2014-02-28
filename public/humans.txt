@@ -1,0 +1,5 @@
+/* ME */
+
+  Joe Ekiert
+  Site: http://homerpicks.herokuapp.com
+  Location: The Land of Chocolate
