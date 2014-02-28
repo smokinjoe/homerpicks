@@ -13,7 +13,7 @@
       <th>What</th>
       <th>Wins</th>
       <th>Losses</th>
-      <th>How many players will<br/>have an OPS over 1.000?</th>
+      <% if current_user.is_admin? %><th>How many players will<br/>have an OPS over 1.000?</th><% end %>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +23,7 @@
         <td><%= p.team %></td>
         <td><%= p.wins %></td>
         <td><%= p.losses %></td>
-        <td><%= p.tiebreaker %></td>
+        <% if current_user.is_admin? %><td><%= p.tiebreaker %></td><% end %>
       </tr>
     <% end %>
   </tbody>
