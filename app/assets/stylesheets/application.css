@@ -9,11 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require bootstrap
+ *= require_tree .
  */
 
 .bg-info,
 .bg-warning {
   padding: 15px;
+}
+
+.actions {
+  margin-top: 20px;
 }
