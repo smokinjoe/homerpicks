@@ -1,5 +1,6 @@
 class PredictionsController < ApplicationController
   before_action :set_prediction, only: [:show, :edit, :update, :destroy]
+  before_action :already_confirmed, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
   
   # GET /predictions
@@ -83,9 +84,15 @@ class PredictionsController < ApplicationController
     def set_prediction
       @prediction = Prediction.find(params[:id])
     end
+  
+  def already_confirmed
+    if @prediction.confirmed
+      redirect_to @prediction
+    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prediction_params
-      params.require(:prediction).permit(:team, :wins, :losses, :tiebreaker)
+      params.require(:prediction).permit(:team, :wins, :losses, :tiebreaker, :confirmed)
     end
 end

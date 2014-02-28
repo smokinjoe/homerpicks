@@ -9,6 +9,6 @@
       <dt>Number of hitters with an OPS over 1.000</dt><dd><%= @prediction.tiebreaker %></dd>
     </dl>
 
-    <%= link_to 'Edit', edit_prediction_path(@prediction) %>
+    <%= link_to 'Edit', edit_prediction_path(@prediction) unless @prediction.confirmed %>
   </div>
 </div>

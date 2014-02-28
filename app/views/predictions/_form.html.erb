@@ -16,6 +16,11 @@
   <%= f.input :wins, label: "Wins", required: true, input_html: { class: 'form-control' } %>
   <%= f.input :losses, label: "Losses", required: true, input_html: { class: 'form-control' } %>
   <%= f.input :tiebreaker, label: "How many players will have an OPS over 1.000?", required: true, input_html: { class: 'form-control' } %>
+  <% if !@prediction.confirmed %>
+    <%= f.input :confirmed, label: 'Confirm this choice?', as: :boolean, checked_value: true, unchecked_value: false %>
+  <% else %>
+    <%= f.hidden_field :confirmed, value: true %>
+  <% end %>
     
   <div class="actions">
     <%= f.submit class: "btn btn-default" %>
