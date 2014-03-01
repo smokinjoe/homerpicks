@@ -13,11 +13,41 @@
  *= require_tree .
  */
 
+.actions {
+  margin-top: 20px;
+}
+
+/*
+#bed-stuy {
+  background-image: url("/assets/images/landsdown-street-fenway.jpg");
+  vertical-align: middle;
+  border: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+*/
+html {
+  background: url(/assets/images/red-chair.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* bootstrap overrides */
+body {
+  background: none !important;
+}
 .bg-info,
 .bg-warning {
   padding: 15px;
 }
-
-.actions {
-  margin-top: 20px;
+.container {
+  /*background-color: #F5F5F5;*/
+}
+.table,
+.col-md-4.col-md-offset-4 {
+  background-color: #fcfcfc;
 }
