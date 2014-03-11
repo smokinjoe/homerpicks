@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def has_prediction?
     return !self.prediction.equal?(nil)
   end
+  
+  def prediction_is_confirmed?
+    return self.prediction && self.prediction.confirmed
+  end
 end
