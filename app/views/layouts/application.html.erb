@@ -10,7 +10,7 @@
 <body>
 
   <div class="container">
-    <% if !current_user.equal?(nil) %>
+    <% if !current_user.nil? %>
     <%= render 'layouts/navbar' %>
     <% end %>
   
