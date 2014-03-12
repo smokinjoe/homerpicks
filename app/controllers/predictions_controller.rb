@@ -13,7 +13,7 @@ class PredictionsController < ApplicationController
   # GET /predictions/1
   # GET /predictions/1.json
   def show
-    @prediction = Prediction.find(params[:id])
+    
   end
 
   # GET /predictions/new
@@ -82,7 +82,7 @@ class PredictionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_prediction
-      @prediction = Prediction.find(params[:id])
+      @prediction = current_user.is_admin? ? Prediction.find(params[:id]) : current_user.prediction
     end
   
   def already_confirmed
