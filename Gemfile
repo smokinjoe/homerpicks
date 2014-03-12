@@ -44,6 +44,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+# taken from: http://stackoverflow.com/questions/20143729/nitrous-io-installing-rspec-and-it-fails-to-install-an-error-occurred-while
+#group :test do
+#  gem 'rspec'
+#  gem 'webrat'
+#end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
