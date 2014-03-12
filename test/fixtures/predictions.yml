@@ -1,7 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  user_id: 
+sox: {
+  user_id: 1,
+  wins: 100,
+  losses: 62,
+  tiebreaker: 4,
+  team: "Red Sox"
+}
 
-two:
-  user_id: 
+reds: {
+  user_id: 2,
+  wins: 100,
+  losses: 62,
+  tiebreaker: 9,
+  team: "Redlegs"
+}
