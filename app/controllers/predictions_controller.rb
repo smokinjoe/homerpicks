@@ -7,13 +7,14 @@ class PredictionsController < ApplicationController
   # GET /predictions.json
   def index
     #@predictions = Prediction.all
+
+    # just make this some before_action or some shit
     redirect_to root_path
   end
 
   # GET /predictions/1
   # GET /predictions/1.json
   def show
-    
   end
 
   # GET /predictions/new
@@ -27,9 +28,7 @@ class PredictionsController < ApplicationController
 
   # GET /predictions/1/edit
   def edit
-    if !Prediction.find(params[:id]).id.equal?(current_user.prediction.id) && !current_user.is_admin?
-      redirect_to Prediction.find(params[:id])
-    end
+    redirect_to @prediction unless @prediction.equal?(current_user.prediction)
   end
 
   # POST /predictions
