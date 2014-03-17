@@ -1,4 +1,5 @@
 class PredictionsController < ApplicationController
+  respond_to :html, :json
   before_action :set_prediction, only: [:show, :edit, :update, :destroy]
   before_action :already_confirmed, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
@@ -9,12 +10,20 @@ class PredictionsController < ApplicationController
     #@predictions = Prediction.all
 
     # just make this some before_action or some shit
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json {
+        @predictions = Prediction.all
+        respond_with @predictions
+      }
+    end
+    #redirect_to root_path
   end
 
   # GET /predictions/1
   # GET /predictions/1.json
   def show
+    respond_with(@prediction)
   end
 
   # GET /predictions/new
