@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   def index
     @signed_in = !current_user.equal?(nil)
     @predictions = Prediction.all
-    @season_started = false
+    @season_started = true
     render 'index'
   end
 end
